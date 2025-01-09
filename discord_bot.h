@@ -1,5 +1,3 @@
-// discord_bot.h
-
 #pragma once
 #include <libwebsockets.h>
 #include <json-c/json.h>
@@ -28,15 +26,11 @@ struct PerSessionData {
 };
 
 
-
-// Function declarations
 DiscordBot* discord_bot_create(const char* token);
 int discord_bot_connect(DiscordBot* bot);
 void discord_bot_destroy(DiscordBot* bot);
 void send_heartbeat(struct lws* wsi);
-// In discord_bot.h
+void send_message(struct lws *wsi, const char *channel_id, const char *content);
+
 extern void handle_message(struct lws *wsi, const char *channel_id, const char *content);
 extern void handle_command(struct lws *wsi, const char *channel_id, const char *content);
-
-
-void send_message(struct lws *wsi, const char *channel_id, const char *content);
