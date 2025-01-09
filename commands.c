@@ -48,10 +48,9 @@ void handle_command(struct lws *wsi, const char *channel_id, const char *content
     }
     else if (strcmp(command, "fact") == 0) {
         const char *facts[] = {
-            "Meg is defiinitely a femboy, uriel too",
-            "The FISH is seither cooking or getting cooked",
-            "Shaja is Batman",
-            "Crow is a crow"
+            "EXAMPLE FACT",
+            "EXAMPLE FACT2"
+
         };
         srand(time(NULL));
         int fact_index = rand() % (sizeof(facts) / sizeof(facts[0]));
